@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemini Chat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <div>
+          <h1>Gemini Chat</h1>
+          <p class="subtitle">ChatGPT-style chat UI powered by Gemini 2.5 Flash</p>
+        </div>
+        <div class="header__actions">
+          <button id="toggle-theme" class="ghost">Toggle theme</button>
+          <button id="clear-chat" class="ghost">Clear chat</button>
+        </div>
+      </header>
+
+      <main class="chat" id="chat"></main>
+
+      <footer class="composer">
+        <div class="composer__row">
+          <textarea
+            id="user-input"
+            placeholder="Ask Gemini anything..."
+            rows="1"
+          ></textarea>
+          <button id="send" class="primary">Send</button>
+        </div>
+        <div class="composer__row composer__row--meta">
+          <label>
+            System prompt
+            <input id="system-prompt" type="text" placeholder="Optional system prompt" />
+          </label>
+          <span id="status" class="status">Idle</span>
+        </div>
+      </footer>
+    </div>
+
+    <template id="message-template">
+      <article class="message">
+        <div class="message__meta"></div>
+        <div class="message__content"></div>
+        <div class="message__actions">
+          <button class="ghost copy">Copy</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
